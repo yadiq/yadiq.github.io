@@ -1,0 +1,165 @@
+code-font-size = 16px
+code-font-family = 'Inconsolata', 'monospace', 'Open Sans', 'Microsoft Yahei', sans-serif
+$dark-mode = hexo-config('dark_mode')
+$smooth-corner = hexo-config('smooth_corner')
+code-border-color = rgba(0, 0, 0, 0.125)
+
+if ($dark-mode == false)
+  @import './highlight-themes/atom-one-light'
+else if ($dark-mode == true)
+  @import './highlight-themes/atom-one-dark-reasonable'
+else // auto
+  @import './highlight-themes/atom-one-light'
+
+  @media (prefers-color-scheme: dark)
+    @import './highlight-themes/atom-one-dark-reasonable'
+
+code, .code, .gutter, pre, figcaption
+  padding: 7px
+  // TODO 代码自动换行并对齐行号
+  line-height: 1.45em
+  font-size: code-font-size
+  font-family: code-font-family
+
+figure.highlight
+  margin: 1em 0
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.125)
+  border-radius: 5px
+
+  if ($dark-mode == false)
+    @import './highlight-themes/atom-one-light'
+  else if ($dark-mode == true)
+    @import './highlight-themes/atom-one-dark-reasonable'
+  else // auto
+    @import './highlight-themes/atom-one-light'
+
+    &
+      @extend .hljs
+
+    @media (prefers-color-scheme: dark)
+      @import './highlight-themes/atom-one-dark-reasonable'
+
+      &
+        @extend .hljs
+
+  if ($smooth-corner)
+    smooth-corner(5, 5, 5)
+
+  table
+    display: block
+    position: relative
+    margin: 0 !important
+    overflow-x: auto
+
+    .code
+      if ($smooth-corner)
+        padding-left: 1em
+        padding-right: 1em
+
+      pre
+        margin: 0
+        // avoid cover by the button
+        max-width: calc(100% - 64px)
+
+    .gutter
+      width: 10px
+      text-align: right
+      user-select: none
+      background-color(code-border-color, code-border-color, code-border-color)
+      border-radius: 5px 0 0 5px
+
+      if (!hexo-config('code.line_number'))
+        display: none
+
+      pre
+        margin: 0
+
+  & > .clipboard-btn
+    border: 1px solid
+    border-color(code-border-color, code-border-color, code-border-color)
+
+    &[data-clicked=true]
+      .icon:before
+        @extend .icon-clipboard-check:before
+
+    @media (max-width: 768px)
+      display: none
+
+    position: absolute
+    top: 0
+    right: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 1.2 * content-font-size
+    height: 1.2 * content-font-size
+    padding: 0.25em
+    margin: 10px 1em
+    border-radius: 5px
+
+    if ($smooth-corner)
+      smooth-corner(5, 5, 100)
+
+    border-color(primary-gray, primary-gray-light, primary-gray-dark)
+    background-color($background-color, background-color-light, background-color-dark)
+    cursor: pointer
+
+    .icon:before
+      @extend .icon-clipboard:before
+      font-size: content-font-size
+
+    &:hover
+      background-color(primary-gray, primary-gray-light, primary-gray-dark)
+
+      .icon
+        text-color(primary-color, primary-color-light, primary-color-dark)
+
+  table, tr
+    margin: 0
+    padding: 0
+    width: 100%
+    border-collapse: collapse
+
+  // If has a caption
+  figcaption
+    padding-caption = 1em
+    padding-x = 2 * padding-caption
+    user-select: none
+    border-radius: 5px 5px 0 0
+    border-bottom: 1px solid
+    border-color(code-border-color, code-border-color, code-border-color)
+
+    font-weight: normal
+    display: grid
+    grid-template-columns: 1fr auto auto
+    column-gap: 1em
+    justify-items: start
+    width: 'calc(100% - %s)' % padding-x
+    padding: 0.5em padding-caption 0.25em padding-caption
+    margin: 0
+
+    @extend .comment
+
+    @media (max-width: 768px)
+      display: none
+
+    .clipboard-btn
+      cursor: pointer
+
+    & + table
+      .gutter
+        border-radius: 0 0 0 5px
+
+  &.c
+    figcaption
+      span
+        &:before
+          content: '/* '
+        &:after
+          content: ' */'
+
+  &.cpp
+    figcaption
+      span
+        &:before
+          content: '// '

@@ -1,0 +1,26 @@
+article#post.post
+  header.post-head
+    h1.post-title
+      a.title(href= url_for(post.path))
+        = post.title
+
+  .post-meta
+    | !{ partial('_partial/post/date') }
+    | !{ partial('_partial/post/tag') }
+    | !{ partial('_partial/visit-count/page-container', null, {cache: true}) }
+
+  .post-info
+    | !{ partial('_partial/post/word-count', {post: post}) }
+    | !{ partial('_partial/post/copyright', {post: post}) }
+
+  .article-entry(itemprop="articleBody")
+    //- post content
+    | !{ post.content }
+    //- comments
+    if theme.comment.enable
+      h3#comments
+        = __('post.comments')
+      if theme.comment.type === "gitalk"
+        | !{ partial('_partial/comment/gitalk', null, {cache: true}) }
+      else if theme.comment.type === "valine"
+        | !{ partial('_partial/comment/valine', null, {cache: true}) }

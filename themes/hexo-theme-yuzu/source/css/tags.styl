@@ -1,0 +1,36 @@
+.tag-title
+  max-width: content-max-width
+  margin-top: 20px
+  margin-bottom: 0.5em
+  font-size: content-font-size
+
+.tags-wrap
+  margin-top: 20px
+  text-color(primary-color, primary-color-light, primary-color-dark)
+
+  .tags
+    a
+      info-link-text()
+      padding-right: 0.25em
+      display: inline-block
+
+      &:hover
+        text-color(primary-color, primary-color-light, primary-color-dark)
+
+  .one-tag-list
+    .tag-text
+      margin: 1em 0 0.5em 0
+      font-size: title-font-size
+      text-color(primary-color, primary-color-light, primary-color-dark)
+
+    .post-preview
+      margin-bottom: 0.5em
+      display: grid
+      grid-template-columns: auto 1fr
+      grid-column-gap: 2em
+
+      .tag-item-date
+        text-color(primary-gray, primary-gray-light, primary-gray-dark)
+
+      .post-title
+        text-color(primary-color, primary-color-light, primary-color-dark)

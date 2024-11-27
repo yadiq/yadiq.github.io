@@ -1,0 +1,17 @@
+-
+  const words = word_counter(post.content);
+  const word_count = (function (words) {
+    const { mode } = theme.word_count;
+    if (mode === "all")
+      return (str) => (words.cn + words.en);
+    else if (mode === "en_only")
+      return (str) => words.en;
+    else
+      return (str) => words.cn;
+  })(words);
+
+if theme.word_count.enable
+  .post-word-count
+    = _p('article.word_count', word_count(words).toLocaleString())
+    if theme.word_count.reading_time
+      = _p('article.reading_time', reading_time(words))

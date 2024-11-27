@@ -1,0 +1,56 @@
+.post-widget
+  @media (max-width: 768px)
+    display: none
+
+  info-text()
+  max-width: 200px
+  position: sticky
+  align-self: flex-start
+  justify-self: center
+  margin-top: 16px
+  top: 65px
+  right: 0
+
+  h4
+    padding-bottom: 0.25em
+    margin-bottom: 0.75em
+    margin-left: -2px // align with post-toc-wrap's border
+    text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
+
+  .post-toc-toggle
+    primary-link-text()
+    font-size: info-font-size
+
+  .post-toc-wrap
+    margin-bottom: 1em
+    padding-left: 1em
+    border-left: 2px solid
+    max-height: 60dvh
+    overflow-y: hidden
+    scroll-behavior: smooth
+
+    .post-toc
+      margin-left: -0.5em
+
+      .post-toc-child
+        margin-left: 0.25em
+        margin-top: 0.5em
+        border-left: 1px solid
+
+      .post-toc-item
+        line-height: 1.25em
+        padding: 0 0 0.5em 0.5em
+        white-space: normal
+
+        &:last-child
+          padding-bottom: 0
+
+        &[data-active] > .post-toc-link
+          text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
+          font-weight: bold
+
+        .post-toc-link
+          display: grid
+          grid-template-columns: auto 1fr
+          grid-gap: 3px
+          transition: 0.5s ease-in-out

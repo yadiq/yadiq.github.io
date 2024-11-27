@@ -1,0 +1,13 @@
+- const groupedPosts = group_posts(page.posts)
+- for (const year of groupedPosts.years)
+  - const posts = groupedPosts[year];
+  section.archives-wrap
+    a(href= url_for(`/archives/${year}/`))
+      h2.archive-year
+        = year
+    .archives-year-cont
+      - for (const post of posts)
+        | !{ partial('_partial/archive-post', {post: post})}
+
+.pagination.archive-pagination
+  | !{ partial('_partial/pagination', {page: page})}
