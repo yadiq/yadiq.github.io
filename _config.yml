@@ -143,9 +143,10 @@ beian:
   enable: true
   icp: 京ICP备xxxxxxxx号
 
-# visit count
+# visit count 网站访问量统计
 visit_count:
-  type: busuanzi
+#  type: busuanzi
+  type:
 
 # hexo-generator-search
 # Please see https://github.com/wzpan/hexo-generator-search/tree/master for detail.
