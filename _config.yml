@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Yadi的笔记本
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Yadi
+language: zh
 timezone: ''
 
 # URL
@@ -109,21 +109,21 @@ deploy:
 since_year: 2020
 
 post_copy:
-  text: 署名-非商业性使用-相同方式共享
+  text: Yadi-非商业性使用-相同方式共享
   text_en: CC BY-NC-SA 2.5 CN
   link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
 
 # 自定义侧边栏
 menu:
-  Archives:
+  归档:
     widget: Archives # 三种：Archives | Posts | Tags
-  Posts1:
+  计算机:
     name: Posts
     widget: Posts
-  Posts2:
+  数学:
     name: Posts2
     widget: Posts
-  Tags:
+  标签:
     widget: Tags
 
 # 首页的Tags Widget显示选项，只有以下选项有效。
@@ -140,7 +140,7 @@ header_menu:
 
 # 备案
 beian:
-  enable: true
+  enable: false
   icp: 京ICP备xxxxxxxx号
 
 # visit count 网站访问量统计
@@ -148,7 +148,7 @@ visit_count:
 #  type: busuanzi
   type:
 
-# hexo-generator-search
+# hexo-generator-search 站内搜索
 # Please see https://github.com/wzpan/hexo-generator-search/tree/master for detail.
 search:
   path: meta.json # changeable
