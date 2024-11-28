@@ -104,19 +104,19 @@ deploy:
   type: ''
 
 
+####################### hexo-theme-yuzu #######################
 
-#####################×Ô¶¨ÒåÖ÷ÌâÅäÖÃ####################
 since_year: 2020
 
 post_copy:
-  text: ÊğÃû-·ÇÉÌÒµĞÔÊ¹ÓÃ-ÏàÍ¬·½Ê½¹²Ïí
+  text: ç½²å-éå•†ä¸šæ€§ä½¿ç”¨-ç›¸åŒæ–¹å¼å…±äº«
   text_en: CC BY-NC-SA 2.5 CN
   link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
 
-# ×Ô¶¨Òå²à±ßÀ¸
+# è‡ªå®šä¹‰ä¾§è¾¹æ 
 menu:
   Archives:
-    widget: Archives # ÈıÖÖ£ºArchives | Posts | Tags
+    widget: Archives # ä¸‰ç§ï¼šArchives | Posts | Tags
   Posts1:
     name: Posts
     widget: Posts
@@ -126,22 +126,22 @@ menu:
   Tags:
     widget: Tags
 
-# Ê×Ò³µÄTags WidgetÏÔÊ¾Ñ¡Ïî£¬Ö»ÓĞÒÔÏÂÑ¡ÏîÓĞĞ§¡£
-# ²Î¿¼ https://hexo.io/docs/helpers.html#list-tags
+# é¦–é¡µçš„Tags Widgetæ˜¾ç¤ºé€‰é¡¹ï¼Œåªæœ‰ä»¥ä¸‹é€‰é¡¹æœ‰æ•ˆã€‚
+# å‚è€ƒ https://hexo.io/docs/helpers.html#list-tags
 tag_options:
-  orderby: length   # °´±êÇ©ÎÄÕÂÊıÅÅĞò
-  order: -1         # µ¹Ğò
-  show_count: true  # ÊÇ·ñÏÔÊ¾tagÎÄÕÂÊı
-  amount: 20        # ÖÁ¶àÏÔÊ¾20¸ötag
+  orderby: length   # æŒ‰æ ‡ç­¾æ–‡ç« æ•°æ’åº
+  order: -1         # å€’åº
+  show_count: true  # æ˜¯å¦æ˜¾ç¤ºtagæ–‡ç« æ•°
+  amount: 20        # è‡³å¤šæ˜¾ç¤º20ä¸ªtag
 
-# ÓÒÉÏ½Ç
+# å³ä¸Šè§’
 header_menu:
-  ¹ØÓÚ: /about
+  å…³äº: /about
 
-# ±¸°¸
+# å¤‡æ¡ˆ
 beian:
   enable: true
-  icp: ¾©ICP±¸xxxxxxxxºÅ
+  icp: äº¬ICPå¤‡xxxxxxxxå·
 
 # visit count
 visit_count:
