@@ -1,0 +1,35 @@
+nav:
+  more: 更多
+  home: 主页
+  tags: 标签
+  archives: 归档
+  about: 关于
+  search: 搜索
+  category: "分类："
+  toggle_bar: 菜单按钮
+
+toc:
+  title: 目录
+
+post:
+  postTime: 发布于
+  tags: 标签
+  visit: 访问
+  donate: 赞赏
+  comments: 留言评论
+  excerpt_link: 更多
+
+search:
+  search: 搜索
+  total: 共
+  counts: 条搜索结果。
+
+article:
+  word_count: 本文共%s字。
+  reading_time: 阅读完需要约%d分钟。
+  hits: 访问
+  copyright: "版权声明："
+
+not_found: "404没找到咯~"
+
+icp: icp备案

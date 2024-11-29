@@ -1,0 +1,35 @@
+nav:
+  more: More
+  home: Home
+  tags: Tags
+  archives: Archives
+  about: About
+  search: Search
+  category: "Category:"
+  toggle_bar: "menu button"
+
+toc:
+  title: In this article
+
+post:
+  postTime: Post
+  tags: Tags
+  visit: Visit
+  donate: donate
+  comments: Comments
+  excerpt_link: more
+
+search:
+  search: search
+  total: ''
+  counts: search result(s) in total.
+
+article:
+  word_count: This article contains %s words.
+  reading_time: It may takes you about %d minutes to read.
+  hits: hits
+  copyright: "Copyright: "
+
+not_found: "404 Not found."
+
+icp: "icp Record"

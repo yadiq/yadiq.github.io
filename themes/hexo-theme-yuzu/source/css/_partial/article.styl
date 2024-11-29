@@ -1,0 +1,146 @@
+.post
+  width: 100%
+  margin: auto
+  font-family: 'Noto Serif', 'Noto Serif SC', sans-serif
+
+  .post-head
+    .post-title
+      margin: 0px 0px 1em
+      font-size: large-font-size
+
+      a
+        position: relative
+        display: inline-block
+        vertical-align: middle
+        overflow: hidden
+        text-decoration: none
+        font-weight: 400
+        text-color(primary-color, primary-color-light, primary-color-dark)
+
+  .post-word-count
+    margin-bottom: 0.25em
+
+  .post-cc
+    primary-link-text()
+    margin-bottom: 1.25em
+
+  p
+    content-text()
+
+    code
+      text-color(primary-color, primary-color-light, primary-color-dark)
+      background-color(code-background-color, code-background-color-light, code-background-color-dark)
+      vertical-align: middle
+      padding: 3px 0.4em
+      border-radius: 3px
+
+      if (hexo-config('smooth_corner'))
+        smooth-corner(5)
+
+    .math.inline
+      font-size: 0.9em
+
+  blockquote
+    quoted-text(default-font-size)
+    quoted-with-sign(default-font-size)
+    padding-bottom: 0.5em
+
+  counter-reset: table-num
+
+  >table, div>table
+    min-width: 60%
+    margin-top: 1.5em
+    margin-bottom: 1em
+    margin-left: auto
+    margin-right: auto
+
+  caption
+    font-size: default-font-size
+    font-weight: 600
+    text-align: center
+
+  counter-reset: figure-num
+
+  figure
+    figcaption
+      font-size: default-font-size
+      font-weight: 600
+      text-align: center
+      display: block
+      margin: 0.5em auto 1.5em auto
+      width: 80%
+
+  info-color = #d2e3ff
+  info-color-dark = #282c34
+  info-stress-color = #448aff
+  info-stress-color-dark = #00aeff
+
+  .math
+    &.display
+      font-size: content-font-size
+      display: block
+      width: 100%
+      margin: 1em -2em
+      text-align: center
+
+      mjx-container[jax="SVG"][display="true"]
+        display: inline;
+
+    @media (max-width: 768px)
+      &
+        font-size: default-font-size
+
+      &.display
+        font-size: info-font-size
+
+  details
+    margin: 1em 0
+    border: 1px solid
+    border-color(border-color, border-color-light, border-color-dark)
+    border-radius: 5px
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.125)
+
+    summary
+      display: grid
+      grid-template-columns: auto 1fr auto
+      align-items: baseline
+      column-gap: 0.5em
+      padding: 0.5em 0.5em
+      background-color(info-color, info-color, info-color-dark)
+      font-family: default-font-family
+      font-weight: bold
+      cursor: pointer
+
+      &:before
+        content: icon-exclamation-triangle-fill
+
+      &:after
+        content: icon-chevron-right
+
+      &:before, &:after
+        @extend .icon
+        font-weight: normal
+        text-color(info-stress-color, info-stress-color, info-stress-color-dark)
+        transition: 0.15s linear
+
+    & > p, & > figure, & > img, & > div
+      margin-left: 0.5em
+      margin-right: 0.5em
+
+    p
+      detailed-text()
+
+    &[open]
+      padding-bottom: 0.5em
+
+      summary
+        margin-bottom: 1em
+
+        &:after
+          transform: rotate(90deg)
+
+  .tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content
+    display: none
+
+  .tab-folder > :last-child, .tab-folder > .tab-content:target
+    display: block

@@ -1,0 +1,8 @@
+.archive-item
+  .article-date
+    time.post-time(title= full_date(post.date) datetime= date_xml(post.date))
+      //- TODO: user defined format
+      = post.date.format('MMM DD')
+  .article-title
+    a(href= url_for(post.path) target="_blank" itemprop="url")
+      = post.title

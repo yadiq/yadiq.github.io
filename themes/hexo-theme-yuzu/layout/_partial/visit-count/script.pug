@@ -1,0 +1,24 @@
+if config.visit_count.type
+  if config.visit_count.type === "visitor-counter"
+    script.
+      Theme.counter = {
+        register: function() {
+          request("#{config.visit_count.url}" + '/?page=' + encodeURI(window.location.href), {
+            method: "GET"
+          })
+            .then(counter => {
+              for (const key in counter) {
+                const dom = document.getElementById(key);
+                if (dom) {
+                  dom.innerText = counter[key];
+                }
+              }
+            })
+            .catch(err => {
+              console.error("Fetching visit count failed.", err);
+            });
+        }
+      };
+
+  else
+    script(async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js")

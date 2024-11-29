@@ -1,0 +1,78 @@
+# ===========================================
+# Site Information Settings
+# ===========================================
+
+# 是否允许用户复制网站上的内容，仅仅是君子协定
+selectable: true
+
+# 文字是否缩进（2字符）
+text_indent: true
+
+# Dark mode
+# Available values: true, false, auto
+dark_mode: auto
+
+# Round corner
+# Warning: This feature is NOT fully tested on various browsers.
+smooth_corner: false
+
+# Code settings
+code:
+  # Force hide line numbers
+  line_number: false
+
+# Counting words
+word_count:
+  enable: false
+  mode: all # or en_only | zh_only
+  reading_time: false
+  reading_speed:
+    cn: 300
+    en: 160
+
+# Site creation time
+since: 2018
+
+# key: link text, value: URL link
+header_menu:
+  About: /about
+
+# 文章右侧TOC导航
+# 对于每篇文章，都可以使用"toc: false|true"指定是否显示toc
+# 不设置则默认与下面的toc.enable保持一致
+toc:
+  enable: true
+  list_number: true  # 是否显示数字排序
+
+# A sentence to show
+signature: 热爱生活，然后发现，处处都是阳光
+
+comment:
+  enable: false
+  type: 'gitalk' # gitalk or valine
+  # config for valine
+  placeholder: 'Just go go.'
+  app_id:
+  app_key:
+  # config for gitalk
+  client_id:
+  client_secret:
+  repo:
+  owner:
+  admin: []
+
+# 是否显示“更多”按钮
+excerpt_link: true
+
+# 是否加载辅助样式
+helpers: false
+
+favicon: /img/favicon.ico
+
+# 此处请设置与根目录下_config.yml里的root一致（一般在url的下一行）
+root: /
+
+# ===========================================
+# Version
+# ===========================================
+version: v3.2.5

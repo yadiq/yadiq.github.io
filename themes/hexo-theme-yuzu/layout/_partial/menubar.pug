@@ -1,0 +1,46 @@
+-
+  const menu = Object.keys(config.menu)
+    .map((key) => [key, config.menu[key]])
+    .sort((at, bt) => {
+      let a = at[1], b = bt[1];
+
+      // Others == Others > Archives > Tags
+      if (a.widget === "Archives")
+        return (b.widget === "Tags") ? -1 : 1;
+      else if (a.widget === "Tags")
+        return 1;
+      else {
+        if (b.widget === "Archives" || b.widget === "Tags")
+          return -1;
+        else
+          return 0;
+      }
+    });
+
+#menubar.menubar-head
+  ul.menubar-ul
+    - for (const [name, item] of menu)
+      if item.widget === "Archives"
+        li.menubar-item(data-border)
+
+      li.menubar-item
+        i.icon(class= item_icon(item))
+        |
+        |
+        a.menubar-link(href= item_url(item))= name
+
+    - const header_menu = config.header_menu;
+    if header_menu
+      li.menubar-item(data-border)
+
+      - for (const item in header_menu)
+        li.menubar-item
+          a.menubar-link(href= url_for(header_menu[item]))
+            span= item
+
+  if config.search
+    div.menu-search-box.search-button
+      div= __('nav.search')
+      |
+      |
+      i.icon.icon-search
