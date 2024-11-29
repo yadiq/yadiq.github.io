@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: Yadi
-language: zh-CN
+language: zh
 timezone: ''
 
 # URL
@@ -113,17 +113,14 @@ post_copy:
   text_en: CC BY-NC-SA 2.5 CN
   link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
 
-# 自定义侧边栏
+# 自定义侧边栏 三种：Archives归档 | Posts分类 | Tags标签
 menu:
   归档:
-    widget: Archives # 三种：Archives | Posts | Tags
+    widget: Archives
   计算机:
-    name: Posts
+    name: 计算机
     widget: Posts
-  数学:
-    name: Posts2
-    widget: Posts
-  标签:
+  Tags:
     widget: Tags
 
 # 首页的Tags Widget显示选项，只有以下选项有效。

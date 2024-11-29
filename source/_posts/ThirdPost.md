@@ -1,7 +1,7 @@
 ---
-title: GitHub Pages + Hexo搭建个人博客网站
+title: GitHub Pages + Hexo搭建个人博客
 date: 2024-11-29 20:26:36
-tags:
+categories: 计算机
 ---
 
  GitHub Pages + Hexo搭建个人博客网站
