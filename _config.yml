@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: Yadi
-language: zh
+language: zh-CN
 timezone: ''
 
 # URL
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-yuzu
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -105,52 +105,3 @@ deploy:
 
 
 ####################### hexo-theme-yuzu #######################
-
-since_year: 2020
-
-post_copy:
-  text: Yadi-非商业性使用-相同方式共享
-  text_en: CC BY-NC-SA 2.5 CN
-  link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
-
-# 自定义侧边栏
-menu:
-  归档:
-    widget: Archives # 三种：Archives | Posts | Tags
-  计算机:
-    name: Posts
-    widget: Posts
-  数学:
-    name: Posts2
-    widget: Posts
-  标签:
-    widget: Tags
-
-# 首页的Tags Widget显示选项，只有以下选项有效。
-# 参考 https://hexo.io/docs/helpers.html#list-tags
-tag_options:
-  orderby: length   # 按标签文章数排序
-  order: -1         # 倒序
-  show_count: true  # 是否显示tag文章数
-  amount: 20        # 至多显示20个tag
-
-# 右上角
-header_menu:
-  关于: /about
-
-# 备案
-beian:
-  enable: false
-  icp: 京ICP备xxxxxxxx号
-
-# visit count 网站访问量统计
-visit_count:
-#  type: busuanzi
-  type:
-
-# hexo-generator-search 站内搜索
-# Please see https://github.com/wzpan/hexo-generator-search/tree/master for detail.
-search:
-  path: meta.json # changeable
-  field: post
-  content: false # currently unsupported
