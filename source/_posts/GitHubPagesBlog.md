@@ -1,5 +1,5 @@
 ---
-title: GitHub Pages + Hexo搭建个人博客
+title: GitHub Pages + Hexo搭建博客
 date: 2024-11-29 20:26:36
 categories: 计算机
 ---
@@ -27,7 +27,7 @@ GitHub Pages是GitHub提供的一个网页托管服务，可以用于存放静�
 ### 2.1 概述 doing
 [Hexo](https://hexo.io/)是一个快速、简洁且高效的博客框架，支持Markdown。
 基于Node.js编写的，所以需要安装NodeJS和npm工具。
-创建者是台湾人，文档友好，提供丰富[主题](https://hexo.io/themes/)。
+文档全面，且主题[主题](https://hexo.io/themes/)丰富。
 
 ### 2.2 配置
 1. 安装Hexo
