@@ -4,7 +4,7 @@
 
 # Site
 title: Yadi的笔记本
-subtitle: ''
+subtitle: '喜欢技术，喜欢折腾'
 description: ''
 keywords:
 author: Yadi
@@ -109,7 +109,7 @@ deploy:
 since_year: 2020
 
 post_copy:
-  text: Yadi-非商业性使用-相同方式共享
+  text: Yadi
   text_en: CC BY-NC-SA 2.5 CN
   link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
 
