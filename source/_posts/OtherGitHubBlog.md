@@ -1,7 +1,8 @@
 ---
 title: GitHub Pages + Hexo搭建博客
 date: 2024-11-29 20:26:36
-categories: 计算机
+tags:
+categories: 其它学习
 ---
 
 ## 概述

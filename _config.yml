@@ -117,8 +117,11 @@ post_copy:
 menu:
   归档:
     widget: Archives
-  计算机:
-    name: 计算机
+  Android:
+    name: Android
+    widget: Posts
+  其它学习:
+    name: 其它学习
     widget: Posts
   Tags:
     widget: Tags
