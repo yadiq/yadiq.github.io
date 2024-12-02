@@ -120,6 +120,12 @@ menu:
   Android:
     name: Android
     widget: Posts
+  程序设计:
+    name: 程序设计
+    widget: Posts
+  音视频:
+    name: 音视频
+    widget: Posts
   其它学习:
     name: 其它学习
     widget: Posts
