@@ -126,6 +126,9 @@ menu:
   音视频:
     name: 音视频
     widget: Posts
+	Linux:
+    name: Linux
+    widget: Posts
   其它学习:
     name: 其它学习
     widget: Posts
@@ -152,7 +155,7 @@ beian:
 # visit count 网站访问量统计
 visit_count:
 #  type: busuanzi
-  type:
+  type: 
 
 # hexo-generator-search 站内搜索
 # Please see https://github.com/wzpan/hexo-generator-search/tree/master for detail.
