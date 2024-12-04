@@ -1,5 +1,5 @@
 ---
-title: Android平台使用C语言实现加密算法
+title: Android平台C语言实现加密算法
 date: 2024-07-01 18:19:20
 tags: 
 categories: Android
