@@ -5,8 +5,7 @@ tags: 快速开发
 categories: Android
 ---
 
-## 概述
-一个整合了大量主流开源项目的 Android MVP 快速集成框架，整合Retrofit+RxJava网络模块的快速开发框架。本文源码见 github 项目 [AndroidMVP](https://github.com/yadiq/AndroidMVP)。
+> 本文介绍了一个基于 Android MVP 的快速集成框架，整合了Retrofit+RxJava网络模块等开源组件。源码见 github 项目 [AndroidMVP](https://github.com/yadiq/AndroidMVP)。
 
 ## 1.框架特点
 

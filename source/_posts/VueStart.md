@@ -5,8 +5,7 @@ tags: Vue
 categories: 
 ---
 
-## 概述
-Vue.js是一个用于创建用户界面的开源MVVM前端JavaScript框架，也是一个创建单页应用的Web应用框架。
+> Vue.js是一个用于创建用户界面的开源MVVM前端JavaScript框架，也是一个创建单页应用的Web应用框架。
 
 ## 1.HelloVuejs
 
