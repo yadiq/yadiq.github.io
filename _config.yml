@@ -126,8 +126,11 @@ menu:
   音视频:
     name: 音视频
     widget: Posts
-	Linux:
+  Linux:
     name: Linux
+    widget: Posts
+  计算机知识:
+    name: 计算机知识
     widget: Posts
   其它学习:
     name: 其它学习
