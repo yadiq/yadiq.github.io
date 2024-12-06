@@ -50,7 +50,7 @@ categories: Android
 ### 2.1 OpenSSL库的集成
 
 [OpenSSL](https://www.openssl.org/source/)是一个开源的软件库，包含了各种加密算法和协议的实现，如SSL/TLS、AES、RSA、DES、SHA等。它可以用来实现网络通信的安全，包括加密、认证和数据完整性验证等功能。
-这里我们使用别人编译好的库: [openssl-curl-android](https://github.com/robertying/openssl-curl-android)
+OpenSSL编译过程这里不做介绍，我们可以使用别人编译好的库: [openssl-curl-android](https://github.com/robertying/openssl-curl-android)
 
 ### 2.2 AES加密算法
 
@@ -70,7 +70,7 @@ AAD(Additional Authenticated Data)：附加身份验证数据。AAD数据不需�
 Mac tag(MAC标签)：将确保数据在传输和存储过程中不会被意外更改或恶意篡改。该标签随后在解密操作期间使用，以确保密文和AAD未被篡改。在加密时，Mac tag由明文、密钥Key、IV、AAD共同产生。
 4. 源码
 AES-256-GCM加解密, AES_128_ECB加解密
-https://gitee.com/administer/AndroidEncrypt/blob/master/app/src/main/jni_secret/my_aes.cpp
+https://github.com/yadiq/AndroidEncrypt/blob/master/app/src/main/jni_secret/my_aes.cpp
 5. 验证。在线加解密工具
 https://www.lddgo.net/en/encrypt/aes
 
@@ -91,7 +91,7 @@ HMAC(散列消息认证码)是一种使用密码散列函数，同时结合一�
 out = HMAC(EVP_sha256(), key, key_len, in, strlen((const char *) in), out, &outLen);
 ```
 4. 源码
-https://gitee.com/administer/AndroidEncrypt/blob/master/app/src/main/jni_secret/my_sha.cpp
+https://github.com/yadiq/AndroidEncrypt/blob/master/app/src/main/jni_secret/my_sha.cpp
 5. 验证。在线加解密工具
 https://tool.oschina.net/encrypt?type=2
 
