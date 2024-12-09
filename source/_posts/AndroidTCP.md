@@ -11,47 +11,67 @@ TCP通信过程，首先打开服务器监听自己的网络通信端口（假�
 
 ## 1.TCP服务端开发的步骤
 
-### 1.1 MVP结构
-1. 表示层 <=> 业务层 => 数据层
-2. View <=> Presenter => Model
+### 1.1 创建ServerSocket，绑定指定端口
+```java
+//开启服务、指定端口号
+if (serverSocket == null) {
+	serverSocket = new ServerSocket(ServerPort);
+	//serverSocket.setPerformancePreferences(1,0,0);//性能首选项 短连接时间、低延迟和高带宽
+	//serverSocket.setReceiveBufferSize(cache.length);//内部套接字接收缓冲区的大小，又用于设置通告给远程对等方的 TCP 接收窗口的大小
+	//serverSocket.setReuseAddress(true);//关闭Socket时等待一会
+	//serverSocket.setSoTimeout(5*1000);//超时默认为0，无限等待
+}
+```
 
-### 1.2 流行框架
-1. [retrofit](https://github.com/square/retrofit)+[okhttp](https://github.com/square/okhttp)+[rxJava](https://github.com/ReactiveX/RxJava)负责网络请求
-2. [gson](https://github.com/google/gson)负责解析json数据
-3. AndPermission 权限管理
-4. SmartRefreshLayout 下拉刷新
+### 1.2 监听连接请求，获取输入输出流
+```java
+//等待客户端的连接，Accept会阻塞，直到建立连接，
+clientSocket = serverSocket.accept();
+//获取输入流
+in = clientSocket.getInputStream();
+//获取输出流
+out = clientSocket.getOutputStream();
+```
+### 1.3 接收、发送数据
+接收数据：
+```java
+int len = in.read(container);
+if (len > 0) {
+	//LogUtil.d("收到数据：" + ByteUtil.bytesToHexWithSpace(container));
+	dealData(container, len);
+} else {
+	isReceive = false;//释放 读取线程
+	onConnectError();
+}
+```
+发送数据：
+```java
+byte[] data = msg.getBytes(Charset.forName("GBK"));
+out.write(data);
+//LogUtil.d("发送数据：" + ByteUtil.bytesToHexWithSpace(data));
 
-### 1.3 基类封装
-1. BaseActivity
-2. BaseFragment
-3. BasePresenter
+```
+### 1.4 定时检查服务允许状态
+```java
+if (timerWorking) {
+    if (timerLength % 3000 == 0) {//每3秒
+        checkServerSocket();//检查服务端运行状态
+    }
+    timerLength += TimerPeriod;//计时更新
+}
+```
+### 1.5 关闭服务
+```java
+if (serverSocket != null) {
+	serverSocket.close();
+	serverSocket = null;
+}
+```
 
-### 1.4 全局操作
-1. 全局的Activity堆栈式管理
-2. LoggingInterceptor全局拦截网络请求日志
-3. 全局的异常捕获，程序发生异常时不会崩溃，返回上个界面。
-4. 使用androidx
+### 1.6 源码
+源码位置：
+https://github.com/yadiq/AndroidTCP/blob/master/app/src/main/java/com/hqumath/tcp/ui/main/TCPServer.java
 
-## 2.注意
-1. 接口使用GitHub API v3，单IP限制每小时60次requests
-2. mipmap文件夹只存放启动图标icon
-3. 图片资源尺寸
+## 2.效果图
 
-|Android|手机屏幕标准|对应图标尺寸标准|屏幕密度|比例|
-|-:|-:|-:|-:|-:|
-|xxxhdpi|3840*2160|192*192|640|16|
-|xxhdpi|1920*1080|144*144|480|12|
-|xhdpi|1280*720|96*96|320|8|
-
-## 3.屏幕适配
-1. 主要适配屏幕信息：1080x1920 px ,360x640 dp (对角线2202.91px)
-2. density（dp密度，1dp上有多少个像素）=1080px / 360dp = 3 px/dp
-3. densitydpi（屏幕像素密度，简称dpi，表示1英寸上对应有多少个像素）=160 * density= 480（因为第一款Android设备 160dpi)
-(屏幕尺寸=对角线像素数/densitydpi=4.59英寸)
-4. 注意.xml文件预览仅支持部分densitydpi（例如：400 420 440 480等）
-
-## 4.效果图
-
-![效果图](/images/AndroidMVP1.gif)
-
-
+![Server](https://github.com/yadiq/AndroidTCP/raw/master/img/Server.jpg)![Client](https://github.com/yadiq/AndroidTCP/raw/master/img/Client.png)
