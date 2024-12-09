@@ -86,6 +86,4 @@ https://github.com/yadiq/AndroidMap/blob/main/app/src/main/java/com/hqumath/map/
 
 ## 4.效果图
 
-![AndroidMap](https://github.com/yadiq/AndroidMap/img/AndroidMap1.jpg)
-
-
+![AndroidMap](https://github.com/yadiq/AndroidMap/raw/main/img/AndroidMap1.jpg)
