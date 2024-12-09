@@ -74,4 +74,5 @@ https://github.com/yadiq/AndroidTCP/blob/master/app/src/main/java/com/hqumath/tc
 
 ## 2.效果图
 
-![Server](https://github.com/yadiq/AndroidTCP/raw/master/img/Server.jpg)![Client](https://github.com/yadiq/AndroidTCP/raw/master/img/Client.png)
+<img src="https://github.com/yadiq/AndroidTCP/raw/master/img/Server.jpg"  width=40% align="left"/>
+<img src="https://github.com/yadiq/AndroidTCP/raw/master/img/Client.png"  width=40% align="right"/>
