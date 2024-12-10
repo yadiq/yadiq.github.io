@@ -75,3 +75,7 @@ TCP 的连接的拆除需要发送四个包，因此称为四次挥手(Four-way 
 四次挥手的示意图如下
 
 ![四次挥手](/images/TCPProtocol2.png)
+
+## 4.TCP服务端的实现
+详见日志：[Android TCP服务端的实现](../../../../2022/08/22/AndroidTCP/)
+
