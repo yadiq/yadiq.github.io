@@ -20,7 +20,7 @@ github地址：https://github.com/openssl/openssl。
 ## 2.curl
 
 ### 2.1 curl概念 
-[curl](https://curl.se/)是一个开源的多协议数据传输开源库，该框架具备跨平台性，开源免费，并提供了包括HTTP、FTP、SMTP、POP3等协议的功能。使用libcurl可以方便地进行网络数据传输操作，如发送HTTP请求、下载文件、发送电子邮件等。
+[curl](https://curl.se/)是一个开源的多协议数据传输开源库，该框架具备跨平台性，开源免费，并提供了包括HTTP、FTP、SMTP、POP3等协议的功能。使用libcurl可以方便地进行网络数据传输操作，如发送HTTP请求、下载文件、发送电子邮件等。如果想让curl支持https，需要依赖openssl，因此需要先编译OpenSSL。
 
 ### 2.2 curl版本选择 
 这里使用 1.1.1w 版本，2023-9-11更新。版本太低
@@ -39,8 +39,8 @@ git clone -b curl-7_88_1 https://github.com/curl/curl.git
 1. 原因
 默认生成的so命名为libcrypto.so.1.1，这样样式的在Android中使用System.loadLibrary加载会失败,，因为Android系统不能识别这种so。直接修改so的名字是不行的，因为在so的SONAME内会指出该so的名字。
 2. 修改so文件名称为"libcrypto.so"
-打开文件 openssl/Configurations/15-android.conf，在 "android" => {...} 中增加一行 shared_extension => ".so" 。如下图
-#TODO
+打开文件 openssl/Configurations/15-android.conf，在 "android" => {...} 中增加一行 shared_extension => ".so"，如下图
+![LinuxCompileOpensslCurl1](/images/LinuxCompileOpensslCurl1.png)
 
 ### 3.4 开始编译
 
@@ -64,14 +64,20 @@ CC=$TOOLCHAIN/bin/$TARGET_HOST$MIN_SDK_VERSION-clang
 CXX=$TOOLCHAIN/bin/$TARGET_HOST$MIN_SDK_VERSION-clang++
 
 2. OpenSSL编译选项
-./Configure android-arm64 no-shared -D__ANDROID_API__=$MIN_SDK_VERSION --prefix=$PWD/build/$ANDROID_ARCH
+./Configure android-arm64 no-shared \
+ -D__ANDROID_API__=$MIN_SDK_VERSION \
+ --prefix=$PWD/build/$ANDROID_ARCH
 //android-arm64 选择CPU架构
-//no-shared 不编译动态库
+//no-shared 不编译动态库。如果想生成openssl动态库，请去掉 "no-shared"。
 //--prefix 编译后安装目录
-如果想生成openssl动态库，请去掉 "no-shared"。
 
 3. curl编译选项
-./configure --host=aarch64-linux-android --target=aarch64-linux-android --with-openssl=$SSL_DIR --with-pic --disable-shared --prefix=$PWD/build/$ANDROID_ARCH
+./configure --host=aarch64-linux-android \
+ --target=aarch64-linux-android \
+ --with-openssl=$SSL_DIR \
+ --with-pic \
+ --disable-shared \
+ --prefix=$PWD/build/$ANDROID_ARCH
 //aarch64-linux-android 选择CPU架构
 //--with-openssl 依赖openssl的目录
 //--disable-shared 不编译动态库
@@ -79,7 +85,7 @@ CXX=$TOOLCHAIN/bin/$TARGET_HOST$MIN_SDK_VERSION-clang++
 
 ## 4. 编译结果
 
-![LinuxCompileOpensslCurl](/images/LinuxCompileOpensslCurl.png)
+![LinuxCompileOpensslCurl2](/images/LinuxCompileOpensslCurl2.png)
 
 ## 5.参考文章
 
