@@ -5,7 +5,7 @@ tags:
 categories: Android
 ---
 
-> 在Android开发过程中，需要对一些数据进行加密，特别是在网络传输过程中。
+> 在Android SDK开发过程中，需要对一些数据进行加密，特别是在网络传输过程中。
 本文使用OpenSSL库实现了APP常用的加解密算法，源码见 github 项目 [AndroidNative](https://github.com/yadiq/AndroidNative)。
 
 ## 1.OpenSSL
