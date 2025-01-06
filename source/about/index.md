@@ -10,6 +10,7 @@ date: 2024-11-28 23:11:51
 ## 我的领域
 - Android
 - JAVA
+- C++
 - ReactNative
 - Web
 - C#
