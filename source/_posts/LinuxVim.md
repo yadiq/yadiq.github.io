@@ -5,4 +5,4 @@ tags:
 categories: Linux
 ---
 
-![LinuxVim](/images/LinuxVim.image)
+![LinuxVim](/images/LinuxVim.gif)

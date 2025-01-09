@@ -92,8 +92,8 @@ X轴平行于船体基线指向船首，Y轴指向船体左侧，Z轴垂直于�
 *   heave 飞行器升降，船舶垂荡
     Z轴加速度
 
-![船舶](/images/AndroidSensor1.awebp)
-![飞行器](/images/AndroidSensor2.awebp)
+![船舶](/images/AndroidSensor1.webp)
+![飞行器](/images/AndroidSensor2.webp)
 
 ## 3.Android系统传感器
 

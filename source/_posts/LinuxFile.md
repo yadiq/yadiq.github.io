@@ -9,7 +9,7 @@ categories: Linux
 
 如果我们将整个目录树以图标的方法来显示，并且将较为重要的文件数据列出来的话，那么目录树架构有点像这样：
 
-![LinuxFileDirectories](/images/LinuxFileDirectories.image)
+![LinuxFileDirectories](/images/LinuxFileDirectories.gif)
 
 ## 2.处理目录的常用命令
 
@@ -57,7 +57,7 @@ rm -rf test
 其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。 要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。
 每个文件的属性由左边第一部分的10个字符来确定（如下图）。
 
-![LinuxFilePermission](/images/LinuxFilePermission.image)
+![LinuxFilePermission](/images/LinuxFilePermission.png)
 
 4. 文件的权限字符为：『-rwxrwxrwx』
 

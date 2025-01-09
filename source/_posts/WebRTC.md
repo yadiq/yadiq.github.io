@@ -35,10 +35,10 @@ turn 包含了stun的功能. 所以只需要部署turn服务器即可.
 WebRTC 是支持音视频通讯功能的，并且WebRTC是开源的，因此我们可以借助WebRTC实现自己的音视频通讯业务，比如视频会议。无论您是使用PC端，Web浏览器，还是Android、IOS系统手机，您都需要遵循以下流程：
 
 流程图 A
-![流程图A](/images/WebRTC1.image)
+![流程图A](/images/WebRTC1.png)
 
 流程图 B
-![流程图B](/images/WebRTC2.image)
+![流程图B](/images/WebRTC2.png)
 
 ## 4.简述逻辑
 上述的场景是**ClientA** 和 **ClientB** 进行视频聊天。
