@@ -1,7 +1,7 @@
 ---
 title: AndroidMVP快速开发框架
 date: 2019-08-22 18:19:20
-tags: 快速开发
+tags: 快速开发框架
 categories: Android
 ---
 

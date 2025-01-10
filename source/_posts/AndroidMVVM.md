@@ -1,7 +1,7 @@
 ---
 title: AndroidMVVM快速开发框架
 date: 2019-08-22 19:32:36
-tags: 快速开发
+tags: 快速开发框架
 categories: Android
 ---
 
