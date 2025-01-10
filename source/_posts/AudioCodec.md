@@ -120,20 +120,67 @@ APE的本质，其实它是一种无损压缩音频格式。庞大的WAV音频�
 无损压缩
 
 ### 2.3 各种编码比较
-
-种类|	压缩比	|支持声道数|	优点|	缺点
-:---|:---|:---|:---|:---
-MP3|	10~12|	2个声道|	压缩比高，适合用于互联网上的传播|	在 128KBitrate 及以下时，会出现明显的高频丢失
-WMA|	10~12|	|当 Bitrate 小于 128K 时， WMA 最为出色且编码后得到的音频文件很小。|	当 Bitrate 大于 128K 时， WMA 音质损失过大。
-OGG|	|支持多声道	|OGG Vobis在压缩技术上比MP3好，而且它的多声道	|
-AAC|	18~20|支持多声道|	支持多种音频声道组合，提供优质的音质|	与时下流行的APE、FLAC等无损格式相比音质存在“本质上”的差距。加之，传输速度更快的USB3.0和16G以上大容量MP3正在加速普及，也使得AAC头上“小巧”的光环不复存在了。
-APE|	无损压缩|		|用做网络音频文件传输，因为被压缩后的APE文件容量要比WAV源文件小一半多，可以节约传输所用的时间。	|
-FLAC|	2	|		|
-WAV	|无损压缩	|单声道和立体声|	WAVE文件作为最经典的Windows多媒体音频格式	|
-
+|种类|压缩比|支持声道|优点|缺点|
+:-|:-|:-|:-|:-|
+MP3|10~12   |双声道|压缩比高，适合用于互<br>联网上的传播|在128KBitrate及以下时，<br>会出现明显的高频丢失|
+WMA|10~12   |      |当Bitrate小于128K时，<br>WMA最为出色且编码<br>后得到的音频文件很小|当Bitrate大于128K时，<br>WMA音质损失过大|
+OGG|        |多声道|OGG Vobis在压缩技术<br>上比MP3好，而且它的多<br>声道|
+AAC|18~20   |多声道|支持多种音频声道组合，<br>提供优质的音质|与时下流行的APE、FLAC等<br>无损格式相比音质存在“本质<br>上”的差距。加之，传输速度<br>更快的USB3.0和16G以上大<br>容量MP3正在加速普及，也<br>使得AAC头上“小巧”的光环<br>不复存在了|
+APE|无损压缩|	   |用做网络音频文件传输，<br>因为被压缩后的APE文件<br>容量要比WAV源文件小<br>一半多，可以节约传输<br>所用的时间|
+FLAC|2      |	   |
+WAV	|无损压缩|单声道<br>立体声|WAVE文件作为最经典的<br>Windows多媒体音频格式|
 
 ## 3.编解码器的使用
+已实现的编解码算法：G711_A_LAW、G711_U_LAW、G723。
+在Android端使用C++实现，录音后选择编码方式进行编码，然后解码播放。
 
+### 3.1 实现G711和G723编解码
+```
+    /**
+     * g711编码 (编码后长度为1/2)
+     *
+     * @param in    输入
+     * @param out   输出
+     * @param inLen 输入长度
+     * @param type  0:G711_A_LAW, 1:G711_U_LAW
+     * @return 输出长度
+     */
+    public static native int g711Encode(byte[] in, byte[] out, int inLen, int type);
 
+    /**
+     * g711解码 (解码后长度为2倍)
+     *
+     * @param in    输入
+     * @param out   输出
+     * @param inLen 输入长度
+     * @param type  0:G711_A_LAW, 1:G711_U_LAW
+     * @return 输出长度
+     */
+    public static native int g711Decode(byte[] in, byte[] out, int inLen, int type);
 
+    /**
+     * g723编码 (编码后长度为1/5.3)
+     *
+     * @param in    输入
+     * @param out   输出
+     * @param inLen 输入长度
+     * @return 输出长度
+     */
+    public static native int g723Encode(byte[] in, byte[] out, int inLen);
+
+    /**
+     * g723解码 (解码后长度为5.3倍)
+     *
+     * @param in    输入
+     * @param out   输出
+     * @param inLen 输入长度
+     * @return 输出长度
+     */
+    public static native int g723Decode(byte[] in, byte[] out, int inLen);
+```
+源码见：
+https://github.com/yadiq/AndroidAudioCodec/blob/main/app/src/main/jni_audio_codec/main.c
+
+### 3.2 效果图
+![AudioCodec2.jpg](/images/AudioCodec2.jpg)
 
