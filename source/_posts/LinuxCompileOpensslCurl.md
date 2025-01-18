@@ -23,7 +23,7 @@ github地址：https://github.com/openssl/openssl。
 [curl](https://curl.se/)是一个开源的多协议数据传输开源库，该框架具备跨平台性，开源免费，并提供了包括HTTP、FTP、SMTP、POP3等协议的功能。使用libcurl可以方便地进行网络数据传输操作，如发送HTTP请求、下载文件、发送电子邮件等。如果想让curl支持https，需要依赖openssl，因此需要先编译OpenSSL。
 
 ### 2.2 curl版本选择 
-这里使用 1.1.1w 版本，2023-9-11更新。版本太低
+这里使用 1.1.1w 版本，2023-9-11更新。版本太高时编译后体积太大
 
 ## 3.编译OpenSSL和curl
 
