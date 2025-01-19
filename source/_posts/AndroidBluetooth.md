@@ -173,5 +173,5 @@ bluetoothGatt.writeCharacteristic(writeCharacteristic);
 ## 5.官方文档
 
 > [通信技术-蓝牙概览](https://source.android.com/docs/core/connect/bluetooth?hl=zh-cn)
->
+
 > [通信技术-蓝牙开发](https://developer.android.com/develop/connectivity/bluetooth?hl=zh-cn)
