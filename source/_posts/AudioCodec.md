@@ -184,3 +184,8 @@ https://github.com/yadiq/AndroidAudioCodec/blob/main/app/src/main/jni_audio_code
 ### 3.2 效果图
 ![AudioCodec2.jpg](/images/AudioCodec2.jpg)
 
+### 4.参考文章
+
+1. [音频编码原理](https://juejin.cn/post/7340076087249190946)
+
+2. [数字音频基础知识](https://blog.csdn.net/u012436149/article/details/79543259)
