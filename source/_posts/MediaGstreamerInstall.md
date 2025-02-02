@@ -53,7 +53,6 @@ https://gstreamer.freedesktop.org/documentation/installing/for-android-developme
 为官方教程代码。
 3. app模块
 为自己实现的播放器，可以执行Gstreamer Pipline。
-
 ![MediaGstreamerInstall1](/images/MediaGstreamerInstall1.png)
 
 ## 3 Linux平台使用
