@@ -45,7 +45,6 @@ H265延续了H264 的很多定义，两个都是基于宏块的视频编码技�
 3. H265协议解析
 参考文章：
 https://www.cnblogs.com/wujianming-110117/p/12722286.html
-https://blog.csdn.net/water1209/article/details/126019443
 
 NALU 单元常由三部分组成: [StartCode] [NALU Header] [NALU Payload] 
 
