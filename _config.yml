@@ -120,14 +120,17 @@ menu:
   Android:
     name: Android
     widget: Posts
-  程序设计:
-    name: 程序设计
-    widget: Posts
   音视频:
     name: 音视频
     widget: Posts
+  跨平台:
+    name: 跨平台
+    widget: Posts
   Linux:
     name: Linux
+    widget: Posts
+  程序设计:
+    name: 程序设计
     widget: Posts
   计算机知识:
     name: 计算机知识
