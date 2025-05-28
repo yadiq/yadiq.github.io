@@ -89,9 +89,9 @@ CXX=$TOOLCHAIN/bin/$TARGET_HOST$MIN_SDK_VERSION-clang++
 
 ## 5.使用OpenSSL和curl
 
-1. [Android使用OpenSSL实现加密算法](http://localhost:4000/2024/07/03/AndroidOpensslEncrypt/)
+1. [Android使用OpenSSL实现加密算法](https://yadiq.github.io/2024/07/03/AndroidOpensslEncrypt/)
 
-2. [Android使用curl+JsonCpp实现http请求](http://localhost:4000/2024/07/04/AndroidCurlHttp/)
+2. [Android使用curl+JsonCpp实现http请求](https://yadiq.github.io/2024/07/04/AndroidCurlHttp/)
 
 
 ## 6.参考文章
