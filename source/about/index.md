@@ -4,15 +4,14 @@ date: 2024-11-28 23:11:51
 ---
 
 ## 关于博客
-个人学习站点，目前在学习混合开发，喜欢开源，喜欢敏捷，喜欢技术，喜欢折腾，正走在成为技术大牛的路上。
+个人学习站点，目前在学习HarmonyOS开发，喜欢开源，喜欢敏捷，喜欢技术，喜欢折腾，正走在成为技术大牛的路上。
 我的Github https://github.com/yadiq
 
 ## 我的领域
-- Android
-- JAVA
-- C++
-- ReactNative
-- Web
+- Android(Java, Kotlin, C/C++)
+- HarmonyOS(ArkTS, C/C++)
+- ReactNative(TypeScript)
+- Web(Vue, JavaScript)
 - C#
 - PHP
 
